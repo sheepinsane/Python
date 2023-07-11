@@ -36,7 +36,7 @@ class YTClass:
 if __name__ == '__main__':       
     print('check') 
     yt = YTClass('https://www.youtube.com/playlist?list=PL7BY4zjaOMAgrj9txV3eOIpt3Wevy6ber',True)
-    print(f"標題:{yt.GetAllTitle()}")
+    print(f"列表標題:{yt.GetAllTitle()}")
 
 #print(f"Views:{yt.GetViews()}")
 
