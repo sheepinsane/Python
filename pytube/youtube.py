@@ -32,7 +32,7 @@ class YTClass:
         else:
             return self.List.title
 
-#標題列表123
+#標題列表1234
 if __name__ == '__main__':       
     print('check') 
     yt = YTClass('https://www.youtube.com/playlist?list=PL7BY4zjaOMAgrj9txV3eOIpt3Wevy6ber',True)
