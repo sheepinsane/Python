@@ -4,6 +4,8 @@ from selenium.webdriver.common.by import By
 import time
 import sys
 import configparser
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service as ChromeService
 
 
 config = configparser.ConfigParser()
@@ -27,8 +29,9 @@ def confirm(prompt):
 
 
 def CheckInOut(PunchInOut):
-    # 使用Chrome瀏覽器
-    driver = webdriver.Chrome()
+    #使用Chrome瀏覽器
+    
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     # 打開網頁
     driver.get("https://hrp.hosp.nycu.edu.tw:8082/logon.aspx")
     driver.maximize_window()
@@ -46,6 +49,8 @@ def CheckInOut(PunchInOut):
     Button_Login.click()
     print("打卡完成")
     time.sleep(6)
+
+    
 
     
     
