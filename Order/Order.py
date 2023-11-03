@@ -2,7 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import configparser
-
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service as ChromeService
 
 config = configparser.ConfigParser()
 config.read('D:\Python\PW.ini')
@@ -14,7 +15,7 @@ print("Account:{0} Password:{1}".format(acc,pw))
 
 
 # 使用Chrome瀏覽器
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 # 打開網頁
 driver.get("http://hisupdatea.ymuh.ym.edu.tw/MealOrder/Login")
 driver.maximize_window()
